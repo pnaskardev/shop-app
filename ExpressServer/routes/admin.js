@@ -16,7 +16,8 @@ router.get('/add-product',(req,res,next)=>
     //         <button type="submit"> Add Product</button>
     //     </form>`
     // );
-    res.sendFile(path.join(rootDir,'views','add-product.html'))
+    // res.sendFile(path.join(rootDir,'views','add-product.html'))
+    res.render('add-product',{pageTitle:'Add Product',path:'/admin/add-product'});
 });
 
 // .post only handles post requests 
