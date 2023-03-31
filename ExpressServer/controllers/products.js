@@ -1,4 +1,4 @@
-const products=[];
+const Product=require('../Models/product_model');
 
 exports.getAddProduct=(req,res,next)=>
 {
@@ -16,10 +16,8 @@ exports.getAddProduct=(req,res,next)=>
 exports.postAddProduct=(req,res,next)=>
 {
     console.log(req.body);
-    products.push
-    ({
-        title:req.body.title
-    });
+    const product=new Product(req.body.title);
+    product.save();
     res.redirect('/');
 };
 
@@ -29,7 +27,8 @@ exports.getProducts=(req,res,next)=>
     // // res.send('<h1>Hello from Express</h1>');
     // console.log('shopJs',adminData.products);
     // res.sendFile(path.join(rootDir,'views','shop.html'));
-    res.render('shop',{prods:products,docTitle:'Shop',path:'/'});
+    Product.fetchAll((products)=>{
+        res.render('shop',{prods:products,docTitle:'Shop',path:'/'});
+    });
+    
 };
-
-exports.products=products;
