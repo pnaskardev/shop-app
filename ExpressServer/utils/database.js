@@ -1,11 +1,13 @@
-const mysql=require('mysql2');
+const Sequelize=require('sequelize');
+const seq=new Sequelize
+(
+    'shop_app',
+    'root',
+    '#FuckModi6969#',
+    {
+        dialect:'mysql',
+        host:'localhost'
+    }
+);
 
-const pool=mysql.createPool
-({
-    host:'localhost',
-    user:'root',
-    database:'shop_app',
-    password:'#FuckModi6969#',
-});
-
-module.exports=pool.promise();
+module.exports=seq;
