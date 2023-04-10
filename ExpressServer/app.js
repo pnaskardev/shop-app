@@ -6,15 +6,15 @@ const bodyParser = require('body-parser');
 const db=require('./utils/database');
 const errorController = require('./controllers/error');
 
-db.execute('SELECT * FROM products')
-    .then((result)=>
-    {
-        console.log(result[0], result[1]);
-    })
-    .catch(err=>
-        {
-            console.log(err);
-        });
+// db.execute('SELECT * FROM products')
+//     .then((result)=>
+//     {
+//         console.log(result[0], result[1]);
+//     })
+//     .catch(err=>
+//         {
+//             console.log(err);
+//         });
 const app = express();
 
 app.set('view engine', 'ejs');
