@@ -2,7 +2,7 @@ const Sequelize=require('sequelize');
 
 const sequelize=require('../utils/database');
 
-const Cart=sequelize.define('cart',
+const OrderItem=sequelize.define('orderItem',
 {
     id:
     {
@@ -10,7 +10,7 @@ const Cart=sequelize.define('cart',
         autoIncrement:true,
         allowNull:false,
         primaryKey:true
-    }
+    },
 });
 
-module.exports=Cart;
+module.exports=OrderItem;
